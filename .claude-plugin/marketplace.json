@@ -1,0 +1,12 @@
+{
+  "name": "uremot",
+  "owner": { "name": "Uremot" },
+  "description": "Uremot's skills and its hosted MCP server, for any harness.",
+  "plugins": [
+    {
+      "name": "uremot",
+      "source": "./",
+      "description": "Your uremot machines and app Instances as tools: launch, watch, act, read back."
+    }
+  ]
+}

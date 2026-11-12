@@ -1,0 +1,17 @@
+Set up Uremot on this machine for me, through to a first agent at work.
+Show me each command before you run it. Sign-ins are mine, in my browser:
+never ask me for a password, key, token or code in this chat.
+
+1. What this machine needs: on Linux, a container engine (docker info
+   answers). On macOS or Windows, it joins with the Uremot desktop app,
+   https://console.uremot.com/download, and runs desks with Docker Desktop.
+2. The client: uremot --version. If it is missing, install it yourself if
+   your permissions allow, or give me the line (on Windows, in Git Bash):
+   curl -fsSL https://get.uremot.com | sh
+   It installs to ~/.uremot/bin; use that path until it is on PATH. If a
+   command below is unknown, the client is old: uremot update.
+3. Install your skills: uremot skills install --harness claude-code, codex
+   or opencode, whichever you are. Then follow the uremot-setup skill, or
+   uremot guide setup if you can't see it yet, and skip what already works.
+4. Once you have Uremot's tools, hire a first agent with me and give it a
+   task.

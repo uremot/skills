@@ -1,0 +1,16 @@
+{
+  "name": "uremot",
+  "displayName": "Uremot",
+  "version": "1.0.0",
+  "description": "Your uremot machines and app Instances as tools: launch, watch, act, read back.",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "uremot"
+  },
+  "mcpServers": {
+    "uremot": {
+      "type": "http",
+      "url": "https://mcp.uremot.com/mcp"
+    }
+  }
+}

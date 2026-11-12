@@ -1,0 +1,8 @@
+{
+  "name": "uremot",
+  "version": "1.0.0",
+  "description": "Your uremot machines and app Instances as tools: launch, watch, act, read back.",
+  "mcpServers": {
+    "uremot": { "httpUrl": "https://mcp.uremot.com/mcp" }
+  }
+}

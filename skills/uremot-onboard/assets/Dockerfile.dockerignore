@@ -1,0 +1,27 @@
+# Written by the Uremot onboarding skill (uremot-onboard).
+# The image takes nothing from the repository.
+*
+# Never in the image, wherever they sit:
+**/.env
+**/.env.*
+**/.envrc
+**/*.pem
+**/*.key
+**/id_*
+**/*.p12
+**/*.pfx
+**/*.jks
+**/*.kdbx
+**/*.tfstate
+**/.npmrc
+**/.pypirc
+**/.netrc
+**/.git-credentials
+**/.aws/
+**/.ssh/
+**/.gnupg/
+**/.kube/
+**/.docker/config.json
+**/credentials*
+**/secrets*
+**/.git/
