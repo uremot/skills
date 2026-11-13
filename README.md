@@ -1,8 +1,8 @@
-# Uremot for your coding agent
+# Give your agents hands, eyes and ears.
 
 [Uremot](https://uremot.com) gives AI agents real computers: a desktop of their own on a machine you choose, which
-you watch live from your browser. This plugin connects your agent to Uremot: the hosted MCP server, and eight skills
-that teach it how to use it.
+you watch live from your browser. This plugin connects your agents to Uremot: the hosted MCP server, and eight skills
+that teach them how to use it.
 
 ## Install
 
@@ -22,9 +22,16 @@ codex plugin add uremot@uremot
 
 **Gemini CLI:** `gemini extensions install https://github.com/uremot/skills`
 
-**Any agent, through skills.sh:** `npx skills add uremot/skills`
+**OpenCode** (2 or later), the skills through skills.sh and the MCP server by its own command:
 
-Then sign in to Uremot when your agent asks; in Claude Code, `/mcp`. New to Uremot? Start with
+```sh
+npx skills add uremot/skills -a opencode -g
+opencode mcp add uremot --url https://mcp.uremot.com/mcp --global
+```
+
+**Any other agent, through skills.sh:** `npx skills add uremot/skills`
+
+Then sign in to Uremot when your agents ask; in Claude Code, `/mcp`. New to Uremot? Start with
 [Getting started](https://uremot.com/docs/getting-started).
 
 ## What's inside
