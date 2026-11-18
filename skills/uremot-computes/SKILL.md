@@ -9,6 +9,12 @@ A Compute is a machine enrolled into a workspace. Its daemon connects it to the 
 containers through a container engine (Docker, or any engine that serves the Docker socket). A desktop app Compute
 also shares its own desktop, which needs no engine.
 
+Installing or starting the container engine needs root, and so does any command here with `sudo`. Show the person the
+exact command first, and run it once they say yes. Where you can't get root (`sudo` asks for a password, or your sandbox
+refuses), give them the command and its link for their own terminal, and wait until they say it's done. Never ask for a
+password in chat. `sudo -n true` tells you which, without a prompt: it exits 0 when root is yours, and fails at once
+with "a password is required" when it isn't.
+
 ## Set up a headless Linux machine
 
 1. **A container engine.** `docker info` must answer. On Linux install Docker Engine
@@ -20,7 +26,8 @@ also shares its own desktop, which needs no engine.
    install the engine, or add `--no-containers` to install without one. Without systemd, install without
    `--daemon` and keep `uremot compute run` running under your init system.
 3. **Enroll.** `uremot compute enroll --sign-in` prints a URL and a code that the person approves in their own
-   browser; show them where it runs, and never relay the code in chat. It records the approving person as owner:
+   browser; show them where it runs, and never relay the code in chat. When the account sees more than one
+   workspace, it asks for `--workspace <workspace-id>`. It records the approving person as owner:
    only they and their agents can launch on it. `uremot compute enroll --grant-stdin`, with a grant from the Console's
    **Add a Compute** page (**Headless Linux server**, then **Create enrollment grant**), enrolls a **shared** machine
    instead: workspace members and their agents can launch on it, and whoever operates it can reach its workloads and
@@ -69,7 +76,7 @@ machine, choose the organization and workspace, and press **Join**. It also need
 - **Broken identity:** `uremot compute recover --grant-stdin`, with a recovery grant a workspace admin issues from
   the machine's page in the Console, keeps its Compute record (`sudo` on a service install, which it stops and
   starts again). Anywhere else, stop the daemon first: recover refuses while it runs. Without a grant, stop the
-  daemon (`sudo systemctl stop uremot-compute` on a service install), `uremot compute reset`, then enroll again.
-  Reset refuses while the daemon runs.
+  daemon (`sudo systemctl stop uremot-compute` on a service install), `uremot compute reset`, then enroll again,
+  both with `sudo` on a service install. Reset refuses while the daemon runs.
 
 On a machine you can't reach, ask its person in chat for the exact command to run, never a guess.

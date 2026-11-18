@@ -1,9 +1,11 @@
 {
   "name": "uremot",
   "displayName": "Uremot",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Your uremot machines and app Instances as tools: launch, watch, act, read back.",
   "license": "Apache-2.0",
+  "icon": "./.claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://uremot.com/legal/privacy",
   "author": {
     "name": "uremot"
   },

@@ -1,19 +1,22 @@
 ---
 name: uremot-connections
-description: Use credentials on Uremot without exposing them. Use when a command needs a repository, model or service credential, to learn what is in reach and how a program uses it, and when a harness needs a person to sign in.
+description: Use connections and variables on Uremot without exposing them. Use when a command needs a repository, model or service credential or a named value, to learn what is in reach and how a program uses it, and when a harness needs a person to sign in.
 ---
 
-# Uremot connections
+# Uremot connections and variables
 
-A connection is a named credential a person linked: a repository, a model provider, a password. Values are never
-shown to you in a listing, and you never show them to anyone.
+A connection is an account or key with a provider Uremot knows how to use, which a person linked: a GitHub App
+installation, a model sign-in or a provider's API key. A variable is a named value with no fixed use, such as
+`MONITOR_TOKEN`, plain or secret. Values are never shown to you in a listing, and you never show them to anyone.
 
 ## What is in reach
 
-- `list_connections` names the connections in reach and how a program inside an Instance uses each, never a value.
+- `list_connections` names the connections and variables in reach and how a program inside an Instance uses each,
+  never a value. Its name stays, though it lists both.
 - Inside an Instance, `uremot var list` lists what it can read, with each one's usage instructions.
 
-An agent, and the machine it runs on, can reach every connection its person can, not only the one it runs on.
+An agent, and the machine it runs on, can reach every connection and variable its person can, not only the one it
+runs on.
 
 ## Using one
 

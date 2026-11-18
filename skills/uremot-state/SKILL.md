@@ -29,9 +29,19 @@ needs someone. The `chip` is:
 - `exited`: its desk or harness stopped; `unknown` later means no recent report.
 
 `list_conversations` lists, in `agents_needing_you`, the agents you hired whose state needs you, oldest first, each
-with its `attention`: `blocked`, then `blocked_long`, `start_stuck`, `stale` (no report for a while),
-`harness_exited` or `supervisor_deaf` (the process watching its harness cannot reach the platform). Your person sees
-the same in the Console's Needs you. A machine's own state, offline or without a container engine, is in
+with its `attention`:
+
+- `stale`: no report for a while;
+- `supervisor_deaf`: the process watching its harness cannot reach the platform, so a call may not reach the agent;
+- `harness_exited`: its harness stopped;
+- `start_stuck`: starting for too long, or its desk ran 10 minutes with no report;
+- `blocked`, and `blocked_long` after 10 minutes;
+- `input_unsubmitted`: a message typed into its harness was not sent;
+- `screen_frozen`: working, with an unchanged screen, for 10 minutes;
+- `unread_screen` or `unknown_long`: its state could not be read for 10 minutes;
+- `not_listening`: idle, with nothing to wake it when you call, for 2 minutes.
+
+Your person sees the same in the Console's Needs you. A machine's own state, offline or without a container engine, is in
 `uremot guide computes`.
 
 ## Keeping your agents moving
@@ -47,8 +57,10 @@ the same in the Console's Needs you. A machine's own state, offline or without a
   again" one; otherwise decline it there, or ask your person.
 - `start_stuck`, `stale`, `harness_exited` or `supervisor_deaf`: read its desk in `list_instances`. Start a stopped
   desk with `start_instance`.
+- `input_unsubmitted`, `screen_frozen`, `unread_screen`, `unknown_long` or `not_listening`: look at its desk with
+  `screenshot`, then tell your person what you see; a stopped desk starts with `start_instance`.
 - `idle` while it owes you work (your call has no answer, or only `working`): mention it there and ask where it
-  stands. A mention wakes it.
+  stands. If the response lists it in `not_woken`, inspect its desk and the reported reason.
 - Never hire a second agent for the same work while the first one's state is unknown: inspect it first.
 
 An idle or working report never answers a call: only `ack_message` does.

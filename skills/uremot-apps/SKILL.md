@@ -18,7 +18,8 @@ An App is an environment you can launch on a machine your person owns. Each Inst
 - its `image`: its logo, a link you can open, when it has one;
 - its `variants`: launch one by its id.
 
-`list_computes` shows the machines you can launch on; choose by labels.
+`list_computes` shows the machines you can launch on; choose by labels. Each one's `sizes` names the fixed vCPU and
+memory limits a launch there may take (`size` on `launch_instance`); none is the default, with no limit.
 
 ## Launching and operating
 

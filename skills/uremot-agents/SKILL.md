@@ -24,12 +24,14 @@ with `launch_instance` instead (`uremot guide apps`).
 
 `hire_agent`, or `uremot agent hire` in a shell, creates the agent and its desk in one step:
 
-- its name, and its `desk`: the machine (`compute_id`), the App (`app_id` or `listing_id`) and the `variant_id`;
+- its name, and its `desk`: the machine (`compute_id`), the App (`app_id` or `listing_id`) and the `variant_id`, and
+  optionally its `size`, one the machine's `sizes` in `list_computes` names;
 - what it runs on: `harness` (`claude-code`, `codex` or `opencode`), the model `provider` (`anthropic`, `openai`,
   `zai`, `openrouter` or `google`) and how it signs in, `auth`: `key`, an API key `connection` of that provider; or
   `subscription`, a Claude Code subscription-token `connection`, or Codex's own ChatGPT sign-in with none. Optionally
   its `model`, in the harness's own form (Claude Code `claude-opus-5-5` or `opus`, never dots; Codex `gpt-5.5`;
-  OpenCode `zai-coding-plan/glm-5.3`), and `effort`. A hire the harness cannot run on is refused with the reason;
+  OpenCode `zai-coding-plan/glm-5.3`), and `effort`. OpenCode needs a `model` on every provider but `zai`, where its
+  default runs. A hire the harness cannot run on is refused with the reason;
 - its instructions: its role in your words, read at every start. Its lead is you, the one who hires it, unless they
   name another: name one only when someone else assigns its work, as `Your lead is <name> (member <id>);
   assignments come from them in chat.` (ids are in `chat_directory`). When it will join a group, say that a
