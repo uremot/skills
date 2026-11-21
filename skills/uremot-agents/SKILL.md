@@ -15,17 +15,22 @@ with `launch_instance` instead (`uremot guide apps`).
 
 1. `list_apps`: choose the App from its description, instructions, version, publisher and variants. A marketplace
    listing (`source` `marketplace`) runs its publisher's image with the agent's credential.
-2. `list_computes`: choose a machine your person owns, by its labels.
+2. Choose a machine your person owns from `list_computes`, or a region and size available to their organization
+   on Uremot Cloud (`uremot guide apps`).
 3. `list_connections`: the model connection it signs in with, by name, when it needs one. An agent and the machine
    it runs on can reach every connection its person can, not only that one: choose the App and machine with that in
    mind.
+
+Uremot Cloud runs only Apps published by Uremot, so check `cloud_eligible` before choosing Cloud.
+For a Cloud hire, pass `desk.managed` with its region and size in place of `compute_id`.
 
 ## Hiring
 
 `hire_agent`, or `uremot agent hire` in a shell, creates the agent and its desk in one step:
 
-- its name, and its `desk`: the machine (`compute_id`), the App (`app_id` or `listing_id`) and the `variant_id`, and
-  optionally its `size`, one the machine's `sizes` in `list_computes` names;
+- its name, and its `desk`: the placement, the App (`app_id` or `listing_id`) and the `variant_id`. A machine
+  placement takes `compute_id` and optionally one of the machine's `sizes` as `size`. Cloud takes a region and size
+  in `managed`;
 - what it runs on: `harness` (`claude-code`, `codex` or `opencode`), the model `provider` (`anthropic`, `openai`,
   `zai`, `openrouter` or `google`) and how it signs in, `auth`: `key`, an API key `connection` of that provider; or
   `subscription`, a Claude Code subscription-token `connection`, or Codex's own ChatGPT sign-in with none. Optionally

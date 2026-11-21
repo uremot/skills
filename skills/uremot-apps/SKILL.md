@@ -21,6 +21,17 @@ An App is an environment you can launch on a machine your person owns. Each Inst
 `list_computes` shows the machines you can launch on; choose by labels. Each one's `sizes` names the fixed vCPU and
 memory limits a launch there may take (`size` on `launch_instance`); none is the default, with no limit.
 
+## Uremot Cloud
+
+Uremot Cloud runs only Apps published by Uremot, so check `cloud_eligible` before choosing Cloud.
+It runs desks with a pinned image digest on machines Uremot operates. Choose a region and size available to the
+organization and pass `managed: {region, size}` to `launch_instance` in place of `compute_id`. Put the size inside
+`managed`. A desk uses the plan's core-hours and its disk lives on one machine.
+
+If launch returns `managed_first_party_required`, choose an eligible desk or use a Compute your person runs.
+If it returns `managed_needs_digest`, choose a desk with a pinned digest. `no_capacity` means there is no room
+in that region and nothing is queued. Try once more after a few minutes, then tell your person.
+
 ## Launching and operating
 
 `launch_instance` starts an App's variant on a machine and returns a URL a person can open to watch it. In a shell,
