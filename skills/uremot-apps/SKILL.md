@@ -40,8 +40,8 @@ in that region and nothing is queued. Try once more after a few minutes, then te
 - A service is reached by its `slug` on its declared `ports`, from any machine of the workspace.
 - A screen is worked in with `screenshot` to look, `act` to type and click, and `cursor_position` and
   `read_clipboard` to read results back exactly. Take a fresh screenshot before using its coordinates.
-- `agent_credential` lets the Instance read your person's connections itself; `secrets` puts one under an
-  environment key for a program that cannot ask (`uremot guide connections`).
+- `agent_credential` lets the Instance read connections and variables in reach. `secrets` maps an eligible saved
+  variable or connection to an environment key for a program that cannot ask (`uremot guide connections`).
 
 `list_instances` shows each Instance's desired and observed state. `stop_instance` keeps it, `start_instance` starts
 it again, `restart_instance` restarts a stopped one, on its version or another of its App (`get_app` lists the

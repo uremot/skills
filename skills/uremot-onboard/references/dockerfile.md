@@ -46,7 +46,8 @@ The rules, each of them checked below:
   directories made writable by `uremot`.
 - No checkout is baked in, and nothing from the repository is copied in: no `COPY` or `ADD`.
 - No harness, `uremot` client or provider CLI: the desk brings them (above).
-- No `ARG` or `ENV` holds a secret. Credentials are connections granted when an Instance is launched.
+- No `ARG` or `ENV` holds a secret. Supply credentials at launch through an eligible provider connection or a
+  secret variable, according to what the App uses.
 
 Check the written Dockerfile; each command prints nothing when it complies:
 

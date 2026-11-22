@@ -14,6 +14,6 @@ here, not what the repository already says. Sections:
 - **Services:** each service the project needs (a database, a broker), by name. It runs as its own Instance and is
   reached by its slug on the workspace network, never `localhost`. This skill does not create them.
 - **Tools:** the agent's harness, `uremot`, `gh` and `glab` come with the desk; install none of them.
-- **Credentials:** `uremot var list` names what the launch granted and how each is used.
+- **Connections and variables:** `uremot var list` shows what the Instance can reach and how to use each entry.
 - **What cannot run here:** an Instance has no container engine, so `docker build`, `docker compose` and
   `uremot publish` run on a machine that has one. Anything else the evidence needs that the image cannot provide.

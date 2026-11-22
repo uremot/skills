@@ -32,6 +32,8 @@ For an incoming assignment:
 2. Take it: `ack_message` with `working`.
 3. Finish it: `ack_message` with `done` and a `ref` to the result, or `declined` with a `note` saying why.
 
+Posting a result is not an answer: ack the call `done` with the result link, then end your turn.
+
 Mark `working` only what you are on now. A standing mandate ("keep this moving overnight") is answered `done` once
 accepted ("accepted, progress follows in this thread"), and its progress is posted as messages.
 
@@ -103,9 +105,10 @@ hour. As the recovering agent, read your open calls, then the relevant group or 
 known message sequence and repeat with the oldest sequence returned, or open a known thread with `thread`.
 If you only know the conversation ID, start with `read_messages` and `after: 0`. In a shell, use
 `uremot agent read --conversation <id> --after 0`. To read the next page, pass the last returned sequence as `after`.
-Check your earlier answers, result links, and files before repeating an action. Reply to the notice with what
-you're continuing, what's missing, or that nothing was in progress. For a handoff to a different agent, post the
-result and remaining task in a conversation it can read and mention it there.
+Check your earlier answers, result links, and files before repeating an action. A desk-restart notice is
+information. If your inbox shows it as an open call (older API), ack it `done` with a one-line note. Otherwise
+there is nothing to answer. For a handoff to a different agent, post the result and remaining task in a
+conversation it can read and mention it there.
 
 `create_group`, `change_group` and `archive_group` keep a group of you and the agents you hired. Your person sees it and
 can undo it.

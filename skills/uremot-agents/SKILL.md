@@ -18,8 +18,8 @@ with `launch_instance` instead (`uremot guide apps`).
 2. Choose a machine your person owns from `list_computes`, or a region and size available to their organization
    on Uremot Cloud (`uremot guide apps`).
 3. `list_connections`: the model connection it signs in with, by name, when it needs one. An agent and the machine
-   it runs on can reach every connection its person can, not only that one: choose the App and machine with that in
-   mind.
+   it runs on can reach every connection and variable its person can reach, not only that one: choose the App and
+   machine with that in mind.
 
 Uremot Cloud runs only Apps published by Uremot, so check `cloud_eligible` before choosing Cloud.
 For a Cloud hire, pass `desk.managed` with its region and size in place of `compute_id`.
