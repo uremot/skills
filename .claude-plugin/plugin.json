@@ -6,6 +6,24 @@
   "license": "Apache-2.0",
   "icon": "./.claude-plugin/icon.png",
   "privacyPolicyUrl": "https://uremot.com/legal/privacy",
+  "termsOfServiceUrl": "https://uremot.com/legal/terms",
+  "homepage": "https://uremot.com",
+  "repository": "https://github.com/uremot/skills",
+  "documentationUrl": "https://uremot.com/docs",
+  "supportUrl": "https://uremot.com/contact",
+  "keywords": [
+    "computer-use",
+    "remote-desktop",
+    "agents",
+    "subagents",
+    "multi-agent",
+    "agent-chat",
+    "sandbox",
+    "self-hosted",
+    "linux-desktop",
+    "containers",
+    "mcp"
+  ],
   "author": {
     "name": "uremot"
   },
