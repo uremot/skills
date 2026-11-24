@@ -20,9 +20,8 @@ with "a password is required" when it isn't.
 1. **A container engine.** `docker info` must answer. On Linux install Docker Engine
    (https://docs.docker.com/engine/install/); on macOS or Windows, Docker Desktop. A Linux Compute that runs as its
    user, not as the service, needs that user in the `docker` group: `sudo usermod -aG docker $USER`, then a new login.
-2. **The binary.** `curl -fsSL https://get.uremot.com | sh` installs `uremot` for the current user. As root with
-   `--daemon` (`curl -fsSL https://get.uremot.com | sudo sh -s -- --daemon`) it also installs the `uremot-compute`
-   systemd service. `--daemon` needs systemd, and stops when no container engine answers, having changed nothing:
+2. **The binary.** Install `uremot` by https://uremot.com/docs/add-a-linux-server.md (its step 1): the plain install
+   is for the current user; as root with `--daemon` it also installs the `uremot-compute` systemd service. `--daemon` needs systemd, and stops when no container engine answers, having changed nothing:
    install the engine, or add `--no-containers` to install without one. Without systemd, install without
    `--daemon` and keep `uremot compute run` running under your init system.
 3. **Enroll.** `uremot compute enroll --sign-in` prints a URL and a code that the person approves in their own

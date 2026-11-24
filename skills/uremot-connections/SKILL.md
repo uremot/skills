@@ -27,10 +27,11 @@ uremot var get <name>
 ```
 
 `gh` and `glab` need nothing installed: on a Uremot desktop each is fetched and verified at first use. Give one a
-repository connection the same way: `GH_TOKEN=$(uremot var get <name>) gh ...`, `GITLAB_TOKEN=$(uremot var get
-<name>) glab ...`. `git` needs no command at all: its credential helper asks the platform for each repository.
+repository connection the same way, on that one command only: `gh` takes it as `GH_TOKEN`, `glab` as
+`GITLAB_TOKEN`, each from `uremot var get <name>`. `git` needs no command at all: its credential helper asks the
+platform for each repository.
 
-Never print the environment (`env`, `printenv`, a screenshot of either): it holds credentials too. Never put a
+Never print the whole environment, or show it in a screenshot: it holds credentials too. Never put a
 value in output, chat, command arguments, files, images or commits, and never ask anyone to paste one
 into chat. A program that cannot ask for a value gets it through `launch_instance`'s `secrets`, under an environment
 key (`uremot guide apps`).

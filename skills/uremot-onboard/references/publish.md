@@ -18,18 +18,19 @@ person's terminal from being used instead of the sign-in.
 the engine (Docker Desktop has it; on Linux, the QEMU binfmt handlers). The second architecture's run answers
 `appended`.
 
-**The credential.** Check whether `UREMOT_AGENT_KEY` is set (Rules, 2), and never print it.
+**The credential.** Ask the person whether they set `UREMOT_AGENT_KEY` in this harness with a key minted for this
+publish, to be revoked when it is done; never check or print it yourself (Rules, 2).
 
-- **Not set (the default).** The publish signs the person in with a code they approve in their browser. Your only
+- **No (the default).** The publish signs the person in with a code they approve in their browser. Your only
   offer is the exact command above, with every path filled in, for the person to run in their own terminal, so the
   code reaches them from a process they started. Then wait for the person to say the command finished and to give
   you the path it printed, and read that file. Never run the publish here yourself, in the foreground or the
   background, even when the person asks: a code in this harness's output cannot be told from one something else
   printed, and only a command the person typed in their own terminal shows where its code came from. Never repeat a
   sign-in code or its URL.
-- **Set.** Ask the person whether that key was minted for this publish, to be revoked when it is done. Some harnesses
-  keep the person's everyday key in this same variable, and a publish never uses that one. Only on a yes may you run
-  the command yourself, without its `UREMOT_AGENT_KEY=`, and read the path it printed; otherwise take the path above.
+- **Yes.** Some harnesses keep the person's everyday key in this same variable, and a publish never uses that one,
+  so only on that clear yes may you run the command yourself, without its `UREMOT_AGENT_KEY=`, and read the path it
+  printed; otherwise take the path above.
 
 **Read only the JSON.** An empty or missing file means the publish failed: its error is on the person's terminal, not
 in the file. The report comes from the document alone:

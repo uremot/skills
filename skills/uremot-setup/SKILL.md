@@ -28,12 +28,8 @@ the person there first.
 
 ## 3. The `uremot` client
 
-Check: `uremot --version`. If it is missing, install it, yourself if your harness allows, else give the person the
-line for their terminal (on Windows, Git Bash):
-
-```sh
-curl -fsSL https://get.uremot.com | sh
-```
+Check: `uremot --version`. If it is missing, install it by https://uremot.com/docs/cli.md, yourself if your harness
+allows, else give the person that page's install line for their terminal (on Windows, Git Bash).
 
 It installs to `~/.uremot/bin` (`/usr/local/bin` as root) and says when that directory is not on `PATH`. Until a
 bare `uremot --version` answers, write `~/.uremot/bin/uremot` in every command here, in a new session too. An old

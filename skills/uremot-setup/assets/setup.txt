@@ -8,9 +8,9 @@ never ask me for a password, key, token or code in this chat.
    my own terminal and wait. On macOS or Windows, it joins with
    the Uremot desktop app, https://uremot.com/download, and runs
    desks with Docker Desktop.
-2. The client: uremot --version. If it is missing, install it yourself if
-   your permissions allow, or give me the line (on Windows, in Git Bash):
-   curl -fsSL https://get.uremot.com | sh
+2. The client: uremot --version. If it is missing, install it by
+   https://uremot.com/docs/cli.md yourself if your permissions allow, or give
+   me that page's line (on Windows, in Git Bash).
    It installs to ~/.uremot/bin: until a bare uremot answers, in a new
    session too, run it as ~/.uremot/bin/uremot. If a command below is
    unknown, the client is old: uremot update.
