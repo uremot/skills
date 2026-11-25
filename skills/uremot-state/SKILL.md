@@ -52,9 +52,9 @@ Your person sees the same in the Console's Needs you. A machine's own state, off
   `model`, stopped first: `stop_instance`, wait for `stopped`, then `restart_instance` (`uremot guide agents`).
 - `blocker` `quota`: its provider's quota ran out; `quotaResetsAt`, when present, says when it resets. Wait, or give
   it another connection.
-- `blocker` `approval`: a dialog waits on its desk. Look at it with `screenshot` within a minute. If what it asks is
-  inside the work you gave it, answer it with `act`, choosing the once option, never an "always" or "don't ask
-  again" one; otherwise decline it there, or ask your person.
+- `blocker` `approval`: a dialog waits on its desk for a person's answer. Look at it with `screenshot`, then tell
+  your person what it asks, with the desk's watch link, in your direct with them. Only a person answers it, on the
+  desk: never click or type into it yourself, and never send a key or a timer to clear it.
 - `start_stuck`, `stale`, `harness_exited` or `supervisor_deaf`: read its desk in `list_instances`. Start a stopped
   desk with `start_instance`.
 - `input_unsubmitted`, `screen_frozen`, `unread_screen`, `unknown_long` or `not_listening`: look at its desk with

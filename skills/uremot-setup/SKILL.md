@@ -28,12 +28,13 @@ the person there first.
 
 ## 3. The `uremot` client
 
-Check: `uremot --version`. If it is missing, install it by https://uremot.com/docs/cli.md, yourself if your harness
-allows, else give the person that page's install line for their terminal (on Windows, Git Bash).
+Check: `uremot --version`. If it is missing, install the release these skills were published with:
+[references/install.md](references/install.md) pins its version and each platform's SHA-256, and installs nothing
+whose checksum differs. Show the person the commands first; run them if your harness allows, else give them for the
+person's terminal (on Windows, Git Bash).
 
-It installs to `~/.uremot/bin` (`/usr/local/bin` as root) and says when that directory is not on `PATH`. Until a
-bare `uremot --version` answers, write `~/.uremot/bin/uremot` in every command here, in a new session too. An old
-client updates with `uremot update`.
+It installs to `~/.uremot/bin`. Until a bare `uremot --version` answers, write `~/.uremot/bin/uremot` in every
+command here, in a new session too. An old client updates with `uremot update`, which checks the release's signature.
 
 ## 4. The harness
 
@@ -65,9 +66,6 @@ skill that is missing, and leaves every other skill alone.
 ```sh
 uremot skills install --harness claude-code    # or codex, opencode
 ```
-
-On Windows, `uremot skills install` doesn't run yet. In Claude Code, add them as a plugin instead:
-`claude plugin marketplace add uremot/skills`, then `claude plugin install uremot@uremot`.
 
 Tools and skills load when a session starts. Ask the person to start a new session and tell you to continue the
 Uremot setup. Check, in that session: `list_computes` answers. OpenCode loads Uremot's tools in the same session,

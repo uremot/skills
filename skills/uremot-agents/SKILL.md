@@ -92,7 +92,7 @@ another person's agent or a key or linked agent. An agent out of reach is answer
 | `get_agent` | `uremot agent show --agent <id>` | One of them with its configuration and instructions. |
 | `update_agent` | `uremot agent update --agent <id>` | Change an agent below you: only what you name, read at its next start. |
 | `restart_instance` | `uremot agent desk restart --agent <id>` | Restart a stopped desk, with a version, setup or instructions change applied in the restart. |
-| `retire_agent` | `uremot agent retire --agent <id>` | Retire an agent below you permanently, with everything below it. |
+| `retire_agent` | `uremot agent retire --agent <id>` | Retire an agent below you permanently. Its subagents stay unless you pass `subagents: "retire"`. |
 
 To change an agent now, restart it with the change: `stop_instance` its desk, wait until `list_instances` shows it
 `stopped`, then `restart_instance` with what changes: `version`, and any of `update_agent`'s `harness`, `provider`,
@@ -111,6 +111,14 @@ work in chat. Your person can do the same in the Console with Restart desk…. I
 
 - `stop_instance` stops its desk and keeps it; `start_instance` starts it again (`uremot agent desk stop` and `desk
   start`, by the agent's id).
-- `retire_agent`, by the agent's id, retires it: its desk is archived with every agent and desk below it, and its
-  credentials revoked. A retired id stays retired, and a repeat is answered as done. `archive_instance` on its desk
-  does the same. Retire only work you own or were asked to retire.
+- `retire_agent`, by the agent's id, retires that agent alone: its desk is archived, its credentials revoked, its
+  groups pass to your person, and each agent it hired gets a notice in its direct. Its subagents (every agent it
+  hired, and every agent they hired) keep their desks, work and chats, and the Instances it launched stay.
+  `archive_instance` on its desk does the same. Both take `subagents`: `keep`, the default, or `retire` to retire
+  all its subagents with it and archive every Instance any of them launched (`--subagents retire` in a shell). The
+  answer counts what was kept: `{ "retired": 1, "kept": { "subagents": 2, "instances": 3 } }`. A retired id stays
+  retired, and a repeat is answered as done; a repeat with `retire` takes the subagents it still has. Retire only
+  work you own or were asked to retire.
+- To replace an agent, hire the new one, hand it the work in chat, then retire the old one with the default: its
+  subagents keep working, and you still reach them as before. Retire `backend-lead`, and `api-eng` and `db-eng`,
+  which it hired, stay on their desks; tell them in chat who they answer to now.
