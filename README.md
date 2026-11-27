@@ -63,7 +63,7 @@ Then sign in to Uremot when your agents ask; in Claude Code, `/mcp`.
 
 ## About this repository
 
-Version 1.3.11, generated from Uremot's own repository at each release: edit nothing here, as the next release
+Version 1.3.12, generated from Uremot's own repository at each release: edit nothing here, as the next release
 replaces it. For a question or a problem, write to us at [uremot.com/contact](https://uremot.com/contact).
 
 ## License
